@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioDevolucoes" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f7a27f9f-afb6-425e-bd81-bd280c85fcf3">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Conexao_Biblioteca"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT 
+    e.id AS id_emprestimo,
+    u.nome AS nome_usuario,
+    e.data_emprestimo,
+    e.data_prevista_devolucao AS prazo_devolucao,
+    e.data_devolucao_real AS data_devolucao
+FROM Emprestimo e
+INNER JOIN Usuario u ON e.id_usuario = u.id
+WHERE e.data_devolucao_real IS NOT NULL
+ORDER BY e.data_devolucao_real DESC]]>
+	</queryString>
+	<field name="id_emprestimo" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_emprestimo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="emprestimo"/>
+	</field>
+	<field name="nome_usuario" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nome_usuario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="usuario"/>
+	</field>
+	<field name="data_emprestimo" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="data_emprestimo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="emprestimo"/>
+	</field>
+	<field name="prazo_devolucao" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="prazo_devolucao"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="emprestimo"/>
+	</field>
+	<field name="data_devolucao" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="data_devolucao"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="emprestimo"/>
+	</field>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{id_emprestimo}]]></groupExpression>
+		<groupHeader>
+			<band height="33">
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="100" height="32" forecolor="#666666" backcolor="#E6E6E6" uuid="396a77aa-243a-4f5e-b362-3fab9a4275a7"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[id_emprestimo]]></text>
+				</staticText>
+				<textField>
+					<reportElement mode="Opaque" x="100" y="0" width="455" height="32" forecolor="#006699" backcolor="#E6E6E6" uuid="d44a2421-e775-46ac-b4bb-2b0eaa902ce4"/>
+					<textElement>
+						<font size="24" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{id_emprestimo}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="83b429d4-5d2d-4549-96e6-08bdc5bc5fdd"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group2">
+		<groupExpression><![CDATA[$F{nome_usuario}]]></groupExpression>
+		<groupHeader>
+			<band height="32">
+				<textField>
+					<reportElement x="100" y="0" width="455" height="32" forecolor="#006699" uuid="b94c208a-7867-4cd4-9c97-c6c048189e7e"/>
+					<textElement>
+						<font size="22" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nome_usuario}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="100" height="20" forecolor="#666666" uuid="9a729115-85a7-411b-978a-97280794cb98"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[nome_usuario]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group3">
+		<groupExpression><![CDATA[$F{data_emprestimo}]]></groupExpression>
+		<groupHeader>
+			<band height="32">
+				<textField>
+					<reportElement x="100" y="0" width="455" height="32" forecolor="#006699" uuid="63e2223f-2edd-4811-a054-466da42f8c27"/>
+					<textElement>
+						<font size="20" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{data_emprestimo}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="100" height="20" forecolor="#666666" uuid="d68201a7-897f-4604-a77a-c2c0958b0cc8"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[data_emprestimo]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group4">
+		<groupExpression><![CDATA[$F{prazo_devolucao}]]></groupExpression>
+		<groupHeader>
+			<band height="32">
+				<textField>
+					<reportElement x="100" y="0" width="455" height="32" forecolor="#006699" uuid="8ac86590-0712-43e1-b84d-3f4c423d04bc"/>
+					<textElement>
+						<font size="16" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{prazo_devolucao}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="100" height="20" forecolor="#666666" uuid="e4dd6662-1fa0-4ae1-afbd-10fbe048bffc"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[prazo_devolucao]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="data_devolucao">
+		<groupExpression><![CDATA[$F{data_devolucao}]]></groupExpression>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="86717522-2883-481f-bb1e-0b5095d14ad9"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="9a717710-d55a-4607-8eab-4e32e17cd4c9"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Devoluções]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="f2d9abfc-3d73-418d-bdbf-358a3ec336d4"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Relatório de devoluções]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="d1773b48-8163-458a-bc30-e683d14f9e18"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="06cdd4d6-0736-44f6-9a26-b8f62a950d1a"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="845afd01-5532-454d-94ac-b3c55df63ee0"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="1339f9ef-ae27-40ff-af0d-846b094a1b9c"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="22f0cefd-4c57-4714-8ede-1fdef4bc6af8"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

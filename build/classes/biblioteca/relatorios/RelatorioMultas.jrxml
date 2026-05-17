@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioMultas" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a55201bf-6bec-4d5b-94d2-ed3aa87319e7">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Conexao_Biblioteca"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT 
+    m.id AS id_multa,
+    u.nome AS nome_usuario,
+    l.nome AS nome_livro,
+    m.valor,
+    e.data_emprestimo,
+    e.data_prevista_devolucao AS prazo
+FROM Multa m
+INNER JOIN Usuario u ON m.id_usuario = u.id
+INNER JOIN Livro l ON m.id_livro = l.id
+INNER JOIN Emprestimo e ON m.id_emprestimo = e.id
+WHERE m.isQuitado = FALSE
+ORDER BY m.valor DESC]]>
+	</queryString>
+	<field name="id_multa" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_multa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="multa"/>
+	</field>
+	<field name="nome_usuario" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nome_usuario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="usuario"/>
+	</field>
+	<field name="nome_livro" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nome_livro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="livro"/>
+	</field>
+	<field name="valor" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="valor"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="multa"/>
+	</field>
+	<field name="data_emprestimo" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="data_emprestimo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="emprestimo"/>
+	</field>
+	<field name="prazo" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="prazo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="emprestimo"/>
+	</field>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{id_multa}]]></groupExpression>
+		<groupHeader>
+			<band height="33">
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="100" height="32" forecolor="#666666" backcolor="#E6E6E6" uuid="29790378-b7ed-44db-b10b-9e6323d4b2c1"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[id_multa]]></text>
+				</staticText>
+				<textField>
+					<reportElement mode="Opaque" x="100" y="0" width="455" height="32" forecolor="#006699" backcolor="#E6E6E6" uuid="a99ee831-5618-4898-9f76-ca66ea4af879"/>
+					<textElement>
+						<font size="24" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{id_multa}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="da75017a-4af1-4f66-9b34-fb9222ce11d2"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group2">
+		<groupExpression><![CDATA[$F{nome_usuario}]]></groupExpression>
+		<groupHeader>
+			<band height="32">
+				<textField>
+					<reportElement x="100" y="0" width="455" height="32" forecolor="#006699" uuid="341aac79-4e47-4ad0-8028-159209eb929f"/>
+					<textElement>
+						<font size="22" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nome_usuario}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="100" height="20" forecolor="#666666" uuid="d060dd3c-ba4d-4de5-b169-425e37781bfc"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[nome_usuario]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group3">
+		<groupExpression><![CDATA[$F{nome_livro}]]></groupExpression>
+		<groupHeader>
+			<band height="32">
+				<textField>
+					<reportElement x="100" y="0" width="455" height="32" forecolor="#006699" uuid="23653393-f3aa-4a3b-beb6-85809875bd44"/>
+					<textElement>
+						<font size="20" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nome_livro}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="100" height="20" forecolor="#666666" uuid="2daa7d04-104d-4ace-a58d-1364ac4a0840"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[nome_livro]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group4">
+		<groupExpression><![CDATA[$F{valor}]]></groupExpression>
+		<groupHeader>
+			<band height="32">
+				<textField>
+					<reportElement x="100" y="0" width="455" height="32" forecolor="#006699" uuid="a8082b58-6566-42c8-8774-e600d7c7d7d8"/>
+					<textElement>
+						<font size="16" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{valor}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="100" height="20" forecolor="#666666" uuid="fa9b97d3-59a9-403f-b717-7ac36449b307"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[valor]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="data_emprestimo">
+		<groupExpression><![CDATA[$F{data_emprestimo}]]></groupExpression>
+	</group>
+	<group name="prazo">
+		<groupExpression><![CDATA[$F{prazo}]]></groupExpression>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="12ce83d3-64ee-4ba3-b66c-dc925e20d84b"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="0ca5948b-434a-40a0-bb22-29d4ed75f31b"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[TITLE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="5e2d1842-5e80-4095-a825-60e2306ca0f9"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Add a description here]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="9853bf8c-af52-4999-871d-af6934406ae2"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="6fd37a5a-4179-4cc8-80ea-b7f6bfb50adb"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="49ae0c3f-e865-4257-9495-cc213895aa53"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="cbbeecb3-87b1-49a3-967d-06454154a797"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="654ced23-7cb2-4e1e-86d4-598be074dfef"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="anchor-pane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="biblioteca.controller.CadastroUsuarioController">
+   <children>
+      <Label layoutX="318.0" layoutY="7.0" prefHeight="389.0" prefWidth="281.0" text="Cadastro de Usuário" textAlignment="RIGHT" wrapText="true">
+         <font>
+            <Font name="Tahoma Bold" size="50.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.36277600116910247" endY="0.4511041009463722" startX="1.0" startY="0.4605678353775939">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9686274528503418" green="0.42352941632270813" blue="0.3686274588108063" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9599999785423279" green="0.3596799969673157" blue="0.31679999828338623" opacity="0.4086294174194336" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <AnchorPane prefHeight="709.0" prefWidth="593.0" style="-fx-background-color: #F1F3F9;">
+         <children>
+            <Label fx:id="labelNome" layoutX="143.0" layoutY="255.0" text="Nome" textFill="#3d528f">
+               <font>
+                  <Font name="Corbel Light" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textFieldNome" layoutX="215.0" layoutY="251.0" prefWidth="237.0" styleClass="textField" />
+            <TextField fx:id="textFieldCPF" layoutX="214.0" layoutY="288.0" prefWidth="237.0" styleClass="textField" />
+            <TextField fx:id="textFieldEmail" layoutX="214.0" layoutY="324.0" prefWidth="237.0" styleClass="textField" />
+            <TextField fx:id="textFieldTelefone" layoutX="214.0" layoutY="359.0" prefWidth="237.0" styleClass="textField" />
+            <TextField fx:id="textFieldEndereco" layoutX="214.0" layoutY="396.0" prefWidth="237.0" styleClass="textField" />
+            <Label fx:id="labelCPF" layoutX="143.0" layoutY="292.0" text="CPF" textFill="#3d528f">
+               <font>
+                  <Font name="Corbel Light" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="LabelEmail" layoutX="142.0" layoutY="328.0" text="E-mail" textFill="#3d528f">
+               <font>
+                  <Font name="Corbel Light" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelEndereco" layoutX="141.0" layoutY="399.0" text="Endereço" textFill="#3d528f">
+               <font>
+                  <Font name="Corbel Light" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelTelefone" layoutX="141.0" layoutY="363.0" text="Telefone" textFill="#3d528f">
+               <font>
+                  <Font name="Corbel Light" size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="buttonUsuario" alignment="CENTER" layoutX="147.0" layoutY="479.0" mnemonicParsing="false" onAction="#handleButtonCadastrar" prefHeight="41.0" styleClass="btn" text="Cadastrar Usuário" />
+            <Button fx:id="buttonVoltar" layoutX="147.0" layoutY="540.0" mnemonicParsing="false" onAction="#handleButtonVoltar" prefHeight="27.0" prefWidth="78.0" text="&lt; Voltar" textFill="WHITE">
+               <font>
+                  <Font name="Corbel Light Italic" size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="43.0" layoutY="132.0" prefHeight="56.0" prefWidth="509.0" styleClass="lblPrincipal" stylesheets="@style.css" text="Cadastro de Usuário" textAlignment="RIGHT" wrapText="true">
+               <font>
+                  <Font name="Tahoma Bold" size="40.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.36277600116910247" endY="0.4511041009463722" startX="1.0" startY="0.4605678353775939">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.9686274528503418" green="0.42352941632270813" blue="0.3686274588108063" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9599999785423279" green="0.3596799969673157" blue="0.31679999828338623" opacity="0.4086294174194336" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" styleClass="anchor-pane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="biblioteca.controller.PaginaInicialController">
+   <children>
+      <AnchorPane layoutX="-4.0" layoutY="-9.0" prefHeight="734.0" prefWidth="535.0" style="-fx-background-color: transparent;">
+         <children>
+            <Button fx:id="buttonUsuario" alignment="CENTER" layoutX="118.0" layoutY="351.0" mnemonicParsing="false" onAction="#handleButtonUsuario" prefHeight="41.0" styleClass="btn" text="Cadastrar Usuário" />
+            <Button fx:id="buttonEmprestimo" alignment="CENTER" contentDisplay="CENTER" layoutX="118.0" layoutY="456.0" mnemonicParsing="false" onAction="#handleButtonEmprestimo" prefHeight="41.0" prefWidth="125.0" styleClass="btn" text="Realizar Empréstimo" />
+            <Label layoutX="142.0" layoutY="170.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="252.0" styleClass="lblPrincipal" text="Biblioteca" textAlignment="RIGHT" wrapText="true">
+               <font>
+                  <Font name="Tahoma Bold" size="50.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.36277600116910247" endY="0.4511041009463722" startX="1.0" startY="0.4605678353775939">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.9686274528503418" green="0.42352941632270813" blue="0.3686274588108063" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9599999785423279" green="0.3596799969673157" blue="0.31679999828338623" opacity="0.4086294174194336" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Button fx:id="buttonAutor" alignment="CENTER" contentDisplay="CENTER" layoutX="118.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleButtonAutor" prefHeight="41.0" styleClass="btn" text="Cadastrar Autor" />
+            <Button fx:id="buttonLivro" alignment="CENTER" contentDisplay="CENTER" layoutX="118.0" layoutY="403.0" mnemonicParsing="false" onAction="#handleButtonLivro" prefHeight="41.0" styleClass="btn" text="Cadastrar Livro" />
+            <Button fx:id="buttonGenero" alignment="CENTER" contentDisplay="CENTER" layoutX="118.0" layoutY="298.0" mnemonicParsing="false" onAction="#handleButtonGenero" prefHeight="41.0" prefWidth="163.0" styleClass="btn" text="Cadastrar Gênero Literário" />
+            <MenuBar layoutY="7.0" prefHeight="33.0" prefWidth="1101.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Cadastros" />
+                <Menu mnemonicParsing="false" text="Relatórios">
+                  <items>
+                        <MenuItem fx:id="menuItemRelatorioMulta" mnemonicParsing="false" onAction="#handleMenuRelatorioMulta" text="Relatório de multas" />
+                    <MenuItem fx:id="menuItemRelatorioDevolucao" mnemonicParsing="false" onAction="#handleMenuRelatorioDevolucao" text="Relatório de devoluções" />
+                  </items>
+                </Menu>
+                  <Menu fx:id="menuGraficos" mnemonicParsing="false" text="Graficos">
+                     <items>
+                        <MenuItem fx:id="menuItemGraficos" mnemonicParsing="false" onAction="#handleMenuGraficos" text="Ver graficos" />
+                     </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+            <Button fx:id="buttonDevolucao" alignment="CENTER" contentDisplay="CENTER" layoutX="118.0" layoutY="512.0" mnemonicParsing="false" onAction="#handleButtonDevolucao" prefHeight="41.0" prefWidth="125.0" styleClass="btn" text="Realizar Devolução" />
+            <Button fx:id="buttonMulta" alignment="CENTER" contentDisplay="CENTER" layoutX="118.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleButtonMulta" prefHeight="41.0" prefWidth="125.0" styleClass="btn" text="Quitação de multas" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

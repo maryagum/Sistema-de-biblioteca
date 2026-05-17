@@ -1,0 +1,110 @@
+.anchor-pane{
+    -fx-pref-width: 1000px;
+    -fx-pref-height: 700px;
+    -fx-background-image: url("imgs/planoDeFundo.png");
+    -fx-background-size: cover;
+    -fx-alignment: center-left;
+}
+
+.button{
+    -fx-pref-width: 300px;
+    -fx-pref-height: 45px;
+    -fx-font-size: 16px;
+    -fx-text-fill: #1F3A5F;
+    -fx-border-color: #1F3A5F;
+    -fx-background-color: #F5F1E8;
+    -fx-transition: 1s;
+    -fx-border-width: 1.5px;
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+    -fx-font-family: "Segoe UI";
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+}
+
+.button:hover{
+    -fx-text-fill: #F5F1E8;
+    -fx-border-color: #F5F1E8;
+    -fx-background-color: #1F3A5F;
+    -fx-transition: 4s;
+}
+
+.label{
+    -fx-font-size: 16px;
+    -fx-text-fill: #1F3A5F;
+}
+.titulos{
+    -fx-font-family:"Georgia";
+    -fx-font-weight: bold;
+    -fx-font-size: 25px;
+    -fx-text-fill: #1F3A5F;
+}
+
+.lblPrincipal{
+    -fx-font-family:"Georgia";
+    -fx-font-weight: bold;
+    -fx-font-size: 48px;
+    -fx-text-fill: #1F3A5F;
+}
+
+.btn{
+    -fx-pref-width: 300px;
+    -fx-pref-height: 45px;
+    -fx-font-size: 16px;
+    -fx-text-fill: #F5F1E8;
+    -fx-border-color: #1F3A5F;
+    -fx-background-color: #1F3A5F;
+    -fx-border-width: 1.5px;
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+    -fx-font-family: "Segoe UI";
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+}
+
+.btn:hover{
+    -fx-text-fill: #1F3A5F;
+    -fx-border-color: #1F3A5F;
+    -fx-background-color: #F5F1E8;
+    -fx-transition: 4s;
+}
+
+
+.anchor-pane-cadastro{
+    -fx-pref-width: 1000px;
+    -fx-pref-height: 700px;
+    -fx-background-size: cover;
+    -fx-background-color: #1F3A5F;
+}
+
+.imagemCadastroLivro{
+    -fx-pref-width: 470px;
+    -fx-pref-height: 670px;
+    -fx-background-image: url("imgs/cadastroLivros.png");
+    -fx-background-size: cover;
+}
+
+.textField{
+    -fx-pref-height: 30px;
+}
+
+.lblColorWhite{
+    -fx-pref-width: 470px;
+    -fx-pref-height: 670px;
+    -fx-background-color: #F5F1E8;
+}
+
+.lblComboBox{
+    -fx-text-fill: #F5F1E8;
+}
+
+
+.combobox{
+    -fx-background-color: #1F3A5F;
+    -fx-pref-width: 300px;
+    -fx-pref-height: 45px;
+    -fx-font-size: 16px;
+    -fx-font-family: "Segoe UI";
+    -fx-border-radius: 3px;
+    -fx-prompt-text-fill: #F5F1E8;
+}
