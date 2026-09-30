@@ -35,6 +35,23 @@ public class PaginaInicialController implements Initializable {
     
     @FXML
     private MenuItem menuItemRelatorioMulta;
+    
+    @FXML
+    private void handleMenuMural() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/biblioteca/view/Mural.fxml"));
+            Parent root = loader.load();
+            
+            Stage stage = new Stage();
+            stage.setTitle("Cliente - Mural de Avisos");
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException e) {
+            System.err.println("Erro ao carregar o mural de avisos: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     private void handleMenuRelatorioMulta() {

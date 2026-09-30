@@ -48,6 +48,7 @@
                   <items>
                         <MenuItem fx:id="menuItemRelatorioMulta" mnemonicParsing="false" onAction="#handleMenuRelatorioMulta" text="Relatório de multas" />
                     <MenuItem fx:id="menuItemRelatorioDevolucao" mnemonicParsing="false" onAction="#handleMenuRelatorioDevolucao" text="Relatório de devoluções" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleMenuMural" text="Mural" />
                   </items>
                 </Menu>
                   <Menu fx:id="menuGraficos" mnemonicParsing="false" text="Graficos">
